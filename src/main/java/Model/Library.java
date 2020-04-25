@@ -1,5 +1,8 @@
 package Model;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Library {
     private static Book[] books;
 
@@ -38,5 +41,10 @@ public class Library {
             }
         }
         return false;
+    }
+
+    public void addBook (String author, String title, String isbn){
+        books = Arrays.copyOf(books, books.length + 1);
+        books [books.length - 1] = new Book (author, title, isbn);
     }
 }

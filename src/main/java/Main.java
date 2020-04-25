@@ -24,7 +24,17 @@ public class Main {
                     library.printAllBooks();
                     break;
                 case 2:
-                    System.out.println("Nazwa funkcjonalności nie została zaimplementowana");
+                    System.out.println("Wpisz autora książki:");
+                    String author = S.nextLine();
+                    author = S.next();
+                    System.out.println("Wpisz tytuł książki:");
+                    String title = S.nextLine();
+                    title = S.next();
+                    System.out.println("Wpisz ISBN książki:");
+                    String isbn = S.nextLine();
+                    isbn = S.next();
+                    library.addBook(author, title, isbn);
+                    System.out.println("Dodano książkę");
                     break;
                 case 3:
                     System.out.println("Wybierz id książki: ");
