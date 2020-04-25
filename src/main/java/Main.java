@@ -1,5 +1,6 @@
 import Model.Book;
 import Model.Library;
+import Model.LibraryException;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -15,10 +16,10 @@ public class Main {
 
         S = new Scanner(System.in);
 
-        while (true){
+        while (true) {
             System.out.println("\nWybierz właściwą opcję:");
             int option = S.nextInt();
-            switch (option){
+            switch (option) {
                 case 1:
                     library.printAllBooks();
                     break;
@@ -28,13 +29,19 @@ public class Main {
                 case 3:
                     System.out.println("Wybierz id książki: ");
                     Long deleteOption = S.nextLong();
-                    library.deleteBookById(deleteOption);
+                    try {
+                        library.deleteBookById(deleteOption);
+                        System.out.println("Usunięto książkę");
+                    } catch (LibraryException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 default:
                     System.out.println("Wybierz poprawną opcję.");
             }
         }
     }
+
 
     private static void menu() {
         System.out.println("Witaj w bibliotece! Co mogę dla ciebie zrobić? \n" +
@@ -52,4 +59,5 @@ public class Main {
                 new Book("Juliusz Słowacki", "Kordian", "9788389524027")
         });
     }
+
 }
