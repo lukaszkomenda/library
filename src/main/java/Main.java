@@ -16,6 +16,7 @@ public class Main {
         S = new Scanner(System.in);
 
         while (true){
+            System.out.println("\nWybierz właściwą opcję:");
             int option = S.nextInt();
             switch (option){
                 case 1:
@@ -25,7 +26,9 @@ public class Main {
                     System.out.println("Nazwa funkcjonalności nie została zaimplementowana");
                     break;
                 case 3:
-                    System.out.println("Nazwa funkcjonalności nie została zaimplementowana");
+                    System.out.println("Wybierz id książki: ");
+                    Long deleteOption = S.nextLong();
+                    library.deleteBookById(deleteOption);
                     break;
                 default:
                     System.out.println("Wybierz poprawną opcję.");

@@ -14,8 +14,16 @@ public class Library {
     }
 
     public void deleteBookById(Long id){
-        for (int i = 0; i < books.length; i++) {
+        Book[] newBooksTable = new Book[books.length - 1];
 
+        int offset = 0;
+        for (int i = 0; i < books.length; i++) {
+            if (!id.equals(books[i].getId())){
+                newBooksTable[i - offset] = books[i];
+            } else {
+                offset++;
+            }
         }
+        books = newBooksTable;
     }
 }
