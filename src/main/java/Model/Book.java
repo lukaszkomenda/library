@@ -35,8 +35,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "\nid: " + id +
+        return "\nid: " + id +
                 "\nauthor: " + author +
                 "\ntitle: " + title +
                 "\nisbn: " + isbn;

@@ -1,6 +1,7 @@
 import Model.Book;
 import Model.Library;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +19,7 @@ public class Main {
             int option = S.nextInt();
             switch (option){
                 case 1:
-                    System.out.println("Nazwa funkcjonalności nie została zaimplementowana");
+                    library.printAllBooks();
                     break;
                 case 2:
                     System.out.println("Nazwa funkcjonalności nie została zaimplementowana");
