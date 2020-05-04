@@ -35,7 +35,7 @@ public class ArrayModification {
                 if (isNumber){
                     int numberOfSign = Character.getNumericValue(sign);
                     if (numberOfSign != 0){
-                        numberOfSign += -10;
+                        numberOfSign = 10 - numberOfSign;
                     }
                     arrayOfNewText.append(numberOfSign);
                 } else if (isLetter){
